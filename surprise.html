@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Your Birthday Surprise</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        text-align: center;
+        overflow-x: hidden;
+        height: 100vh;
+        color: #fff;
+        padding-top: 50px;
+        position: relative;
+      }
+
+      /* 🔥 BACKGROUND VIDEO */
+      #bg-video {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+        filter: brightness(0.5);
+      }
+
+      h1 {
+        font-size: 40px;
+        animation: fadeDown 1s ease;
+      }
+
+      p {
+        max-width: 700px;
+        margin: 20px auto;
+        font-size: 20px;
+        opacity: 0.9;
+        animation: fadeDown 1s ease 0.3s backwards;
+      }
+
+      /* Gallery */
+      .gallery {
+        margin-top: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        position: relative;
+        z-index: 2;
+      }
+
+      .gallery img {
+        width: 260px;
+        height: 400px;
+        border-radius: 20px;
+        object-fit: cover;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+        animation: popIn 0.7s ease;
+        transition: 0.3s;
+      }
+
+      .gallery img:hover {
+        transform: scale(1.08);
+      }
+
+      /* Floating Hearts Animation */
+      .heart {
+        position: absolute;
+        bottom: -50px;
+        color: #ff2e63;
+        font-size: 28px;
+        animation: heartFloat 6s linear infinite;
+        opacity: 0.8;
+        z-index: 1;
+      }
+
+      @keyframes popIn {
+        from {
+          opacity: 0;
+          transform: scale(0.6);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+      @keyframes fadeDown {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes heartFloat {
+        0% {
+          transform: translateY(0) rotate(0);
+        }
+        100% {
+          transform: translateY(-120vh) rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 🔥 Background Video -->
+    <video autoplay loop muted playsinline id="bg-video">
+      <source src="video/musie.mp4" type="video/mp4" />
+    </video>
+
+    <h1>🎁 Here's Your Special Surprise 🎁</h1>
+    <p>
+      Happy Birthday, bestie! I can’t thank you enough for all the laughs,
+      memories, and crazy moments we’ve shared. You make life so much more fun
+      just by being in it. May this year finally bring you some sense… but
+      knowing you, I’m not expecting miracles. 😂 I hope your day is as special
+      and beautiful as you are. Wishing you lots of love, good vibes, and
+      happiness today and always. Have the best birthday ever! 🎉💕 And
+      listen—don’t feel low, don’t lose hope, and never think you’re not going
+      to get what you want. This isn’t Kalyug… this is kalo ka yug — and you’re
+      built to win. 💪🔥
+    </p>
+
+    <div class="gallery">
+      <img src="images/1.jpg" />
+      <img src="images/3.jpg" />
+      <img src="images/6.jpg" />
+      <img src="images/4.jpg" />
+      <img src="images/2.jpg" />
+    </div>
+
+    <!-- Floating Hearts -->
+    <script>
+      for (let i = 0; i < 15; i++) {
+        let heart = document.createElement("div");
+        heart.className = "heart";
+        heart.style.left = Math.random() * 100 + "%";
+        heart.style.animationDelay = Math.random() * 5 + "s";
+        heart.innerHTML = "❤️";
+        document.body.appendChild(heart);
+      }
+    </script>
+  </body>
+</html>
